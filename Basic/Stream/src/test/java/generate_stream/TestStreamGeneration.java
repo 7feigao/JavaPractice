@@ -34,6 +34,7 @@ public class TestStreamGeneration {
     public void steam_of(){
         Stream.of(1,2,3,4).forEach(System.out::println);
     }
+
     @Test
     public void stream_generate(){
         /*
