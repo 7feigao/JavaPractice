@@ -9,8 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>Collection</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>Thread</artifactId>
     <build>
         <plugins>
             <plugin>
@@ -23,16 +22,7 @@
             </plugin>
         </plugins>
     </build>
-    <modules>
-        <module>List</module>
-    </modules>
     <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.13.2</version>
-            <scope>test</scope>
-        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>

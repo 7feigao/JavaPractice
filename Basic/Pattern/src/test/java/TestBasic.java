@@ -165,24 +165,25 @@ public class TestBasic {
     }
 
     @Test
-    public void testFlagLiteral(){
+    public void testFlagLiteral() {
         /**
          * treat the regex pattern as literal string, */
-        Pattern literalFlagPattern=Pattern.compile("(?s)Hell0\\d+",Pattern.LITERAL);
-        Matcher matcher= literalFlagPattern.matcher("(?s)Hell0\\d+");
+        Pattern literalFlagPattern = Pattern.compile("(?s)Hell0\\d+", Pattern.LITERAL);
+        Matcher matcher = literalFlagPattern.matcher("(?s)Hell0\\d+");
         if (matcher.matches()) {
             System.out.println("Matched");
         } else {
             Assert.fail("not match");
         }
     }
+
     @Test
-    public void testFlagMultiline(){
+    public void testFlagMultiline() {
         /**
          * in this mode, "^" and "$" will match just after or just before a line terminator or the end of the input sequence
          * */
-        Pattern multilinePattern=Pattern.compile("^(.*)$\\R?(.*)",Pattern.MULTILINE);
-        Matcher matcher=multilinePattern.matcher("hello\nworld!");
+        Pattern multilinePattern = Pattern.compile("^(.*)$\\R?(.*)", Pattern.MULTILINE);
+        Matcher matcher = multilinePattern.matcher("hello\nworld!");
         if (matcher.matches()) {
             System.out.println(matcher.group(1));//output: hello
         } else {
@@ -191,87 +192,100 @@ public class TestBasic {
         System.out.println(Pattern.quote("1\\d+3"));
         System.out.println(multilinePattern.toString());
     }
-    @Test
-    public void testQuote(){
 
-        Pattern multilinePattern=Pattern.compile("\\Q1\\d+3\\E",Pattern.MULTILINE);
-        Matcher matcher=multilinePattern.matcher("1\\d+3");
+    @Test
+    public void testQuote() {
+
+        Pattern multilinePattern = Pattern.compile("\\Q1\\d+3\\E", Pattern.MULTILINE);
+        Matcher matcher = multilinePattern.matcher("1\\d+3");
         if (matcher.matches()) {
             System.out.println("matched");//output: hello
         } else {
             Assert.fail("not match");
         }
     }
+
     @Test
-    public void testLookaheadMatchPattern(){
+    public void testLookaheadMatchPattern() {
 //        lookahead and should match pattern
-        Pattern lookaheadPattern=Pattern.compile("(.*)(?<=hello,)(?<name>\\w\\d{2}).*");
-        String s="hello,ala;hello,a12";
-        Matcher matcher=lookaheadPattern.matcher(s);
-        if(matcher.matches()){
+        Pattern lookaheadPattern = Pattern.compile("(.*)(?<=hello,)(?<name>\\w\\d{2}).*");
+        String s = "hello,ala;hello,a12";
+        Matcher matcher = lookaheadPattern.matcher(s);
+        if (matcher.matches()) {
             System.out.println(matcher.group(1));//output: hello,ala;hello,
             System.out.println(matcher.group("name"));//output: a12
-        }else{
+        } else {
             Assert.fail("not match");
         }
     }
 
     @Test
-    public void testLookaheadNoMatchPattern(){
+    public void testLookaheadNoMatchPattern() {
 //        lookahead and should not match pattern
-        Pattern lookaheadPattern=Pattern.compile("(.*)(?<!hello,)(?<name>\\w\\d{2}).*");
-        String s="hello,ala;hello,a12;hi,a13";
-        Matcher matcher=lookaheadPattern.matcher(s);
-        if(matcher.matches()){
+        Pattern lookaheadPattern = Pattern.compile("(.*)(?<!hello,)(?<name>\\w\\d{2}).*");
+        String s = "hello,ala;hello,a12;hi,a13";
+        Matcher matcher = lookaheadPattern.matcher(s);
+        if (matcher.matches()) {
             System.out.println(matcher.group(1));//output: hello,ala;hello,a12;hi,
             System.out.println(matcher.group("name"));//output: a13
-        }else{
-            Assert.fail("not match");
-        }
-    }
-    @Test
-    public void testLookaheadPositiveMatchPattern(){
-//        lookahead and should match pattern
-        Pattern lookaheadPattern=Pattern.compile("(.*)(?<name>\\w\\d{2})(?=,hello).*");
-        String s="ala,hello;a12,hello";
-        Matcher matcher=lookaheadPattern.matcher(s);
-        if(matcher.matches()){
-            System.out.println(matcher.group(1));//output: ala,hello;
-            System.out.println(matcher.group("name"));//output: a12
-        }else{
+        } else {
             Assert.fail("not match");
         }
     }
 
     @Test
-    public void testLookaheadPositiveNoMatchPattern(){
+    public void testLookaheadPositiveMatchPattern() {
+//        lookahead and should match pattern
+        Pattern lookaheadPattern = Pattern.compile("(.*)(?<name>\\w\\d{2})(?=,hello).*");
+        String s = "ala,hello;a12,hello";
+        Matcher matcher = lookaheadPattern.matcher(s);
+        if (matcher.matches()) {
+            System.out.println(matcher.group(1));//output: ala,hello;
+            System.out.println(matcher.group("name"));//output: a12
+        } else {
+            Assert.fail("not match");
+        }
+    }
+
+    @Test
+    public void testLookaheadPositiveNoMatchPattern() {
 //        lookahead and should not match pattern
-        Pattern lookaheadPattern=Pattern.compile("(.*)(?!hello,)(?<name>\\w\\d{2})(.*)");
-        String s="ala,hello;a12,hello;a13,hi";
-        Matcher matcher=lookaheadPattern.matcher(s);
-        if(matcher.matches()){
+        Pattern lookaheadPattern = Pattern.compile("(.*)(?!hello,)(?<name>\\w\\d{2})(.*)");
+        String s = "ala,hello;a12,hello;a13,hi";
+        Matcher matcher = lookaheadPattern.matcher(s);
+        if (matcher.matches()) {
             System.out.println(matcher.group(1));//output: ala,hello;a12,hello;
             System.out.println(matcher.group(2));//output: a13
             System.out.println(matcher.group("name"));//output: a13
             System.out.println(matcher.group(3));//output: ,hi
 
-        }else{
+        } else {
             Assert.fail("not match");
         }
     }
 
     @Test
-    public void testAtomicGroups(){
+    public void testAtomicGroups() {
         /**
          * will try to match with test first, and successed, then match s, failed, then exit, won't backtracking to try to match test in group.*/
-        Pattern atomicGroupPattern=Pattern.compile("(?>tes|test)s");
-        String s="tests";
-        Matcher matcher=atomicGroupPattern.matcher(s);
-        if(matcher.matches()){
+        Pattern atomicGroupPattern = Pattern.compile("(?>tes|test)s");
+        String s = "tests";
+        Matcher matcher = atomicGroupPattern.matcher(s);
+        if (matcher.matches()) {
             Assert.fail("match");
-        }
-        else{
+        } else {
             System.out.println("not match");
+        }
+    }
+
+    @Test
+    public void testReuseGroup() {
+        Pattern pattern = Pattern.compile("(?<id>[3-5]+).*(?<id2>\\k<id>)");
+        String s1 = "3452fds4345";
+        Matcher matcher = pattern.matcher(s1);
+        if(matcher.matches()){
+            System.out.println(matcher.group("id"));
+            System.out.println(matcher.group("id2"));
         }
     }
 }

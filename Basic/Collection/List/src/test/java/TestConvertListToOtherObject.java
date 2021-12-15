@@ -1,6 +1,7 @@
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.AbstractQueue;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -14,6 +15,7 @@ public class TestConvertListToOtherObject {
         Assert.assertTrue(strArr.length == 3);
         Assert.assertEquals("hello", strArr[0]);
         Assert.assertEquals("!", strArr[2]);
+        listStr.iterator().forEachRemaining(rec-> System.out.println(rec));
 
     }
 }
