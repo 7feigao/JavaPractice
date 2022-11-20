@@ -1,5 +1,7 @@
 import org.junit.Test;
 
+import java.util.concurrent.TimeUnit;
+
 public class TestThreadName {
     @Test
     public void testThreadName() throws InterruptedException {
@@ -13,6 +15,11 @@ public class TestThreadName {
         thread.setName("namedThread");
         thread.start();
         thread.join();
+
+        Thread thread1=new Thread(()->{
+            System.out.println("hello");
+        });
+        thread1.start();
     }
 
 }

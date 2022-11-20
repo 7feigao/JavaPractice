@@ -15,10 +15,11 @@
         <module>General</module>
         <module>Array</module>
         <module>Collection</module>
-        <module>List</module>
         <module>Thread</module>
         <module>Generic</module>
         <module>IO</module>
+        <module>Iterator</module>
+        <module>OOP</module>
     </modules>
 
 

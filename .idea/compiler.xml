@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Pattern" />
+        <module name="Generic" />
+        <module name="IO" />
+        <module name="String" />
+        <module name="Thread" />
+        <module name="Array" />
+        <module name="OOP" />
+        <module name="Iterator" />
+        <module name="General" />
+        <module name="Stream" />
+        <module name="List" />
+        <module name="Demos" />
+        <module name="Monad" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>
