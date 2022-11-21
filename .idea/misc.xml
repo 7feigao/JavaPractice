@@ -9,6 +9,23 @@
         <option value="$PROJECT_DIR$/Demos/pom.xml" />
       </list>
     </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/Basic/Array/pom.xml" />
+        <option value="$PROJECT_DIR$/Basic/Collection/List/pom.xml" />
+        <option value="$PROJECT_DIR$/Basic/Collection/pom.xml" />
+        <option value="$PROJECT_DIR$/Basic/General/pom.xml" />
+        <option value="$PROJECT_DIR$/Basic/Generic/pom.xml" />
+        <option value="$PROJECT_DIR$/Basic/IO/pom.xml" />
+        <option value="$PROJECT_DIR$/Basic/Pattern/pom.xml" />
+        <option value="$PROJECT_DIR$/Basic/Stream/pom.xml" />
+        <option value="$PROJECT_DIR$/Basic/String/pom.xml" />
+        <option value="$PROJECT_DIR$/Basic/Thread/pom.xml" />
+        <option value="$PROJECT_DIR$/CodingStyles/Monad/pom.xml" />
+      </set>
+    </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
 </project>

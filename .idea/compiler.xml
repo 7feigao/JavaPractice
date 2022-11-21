@@ -6,20 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Pattern" />
-        <module name="Generic" />
-        <module name="IO" />
-        <module name="String" />
-        <module name="Thread" />
-        <module name="Array" />
         <module name="OOP" />
         <module name="Iterator" />
-        <module name="General" />
-        <module name="Stream" />
-        <module name="List" />
-        <module name="Demos" />
-        <module name="Monad" />
+        <module name="DecimalCompare" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="8" />
   </component>
 </project>
